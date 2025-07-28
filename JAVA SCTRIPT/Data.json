@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "Arjun",
+        "age" : "18",
+        "isstudent" : "true",
+        "skills" : ["HTML" , "CSS" , "JAVASCRIPT"]
+    }
+
+    {
+        "Studentname" : ["Arjun", "Ravi", "Devendra", "Harshita", "ayushi","Lovely", "Tanu"]
+    }
+]

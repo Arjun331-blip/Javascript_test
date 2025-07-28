@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let heading = document.createElement("h1");
+        let text = document.createTextNode("Devansu Sir");
+
+        heading.appendChild(text);
+        document.body.appendChild(heading);
+
+        let anchor = document.createElement("a");
+        let link = document.createTextNode("Google");
+        anchor.setAttribute("href","https://www.youtube.com/");
+        anchor.setAttribute("target", "_blank");
+        anchor.appendChild(link);
+        anchor.body.appendChild(link);
+
+        console.log(anchor);
+    </script>
+</body>
+</html>

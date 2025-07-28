@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        box-sizing: border-box;
+      }
+
+      .card {
+        width: 300px;
+        background-color: #fff;
+        padding: 18px;
+        box-shadow: 0px 4px 8px rgb(96, 93, 93);
+        text-align: center;
+        border-radius: 14px;
+      }
+
+      .card img {
+        width: 100%;
+        height: 170px;
+        border-radius: 5px;
+      }
+
+      .card:hover {
+        transform: scale(-7px);
+        transition: transfrom 2s;
+        cursor: pointer;
+      }
+
+      .card h3 {
+        color: rgb(109, 104, 104);
+      }
+
+      .card h4 {
+        color: rgb(88, 135, 88);
+      }
+
+      .card p {
+        font-weight: 300px;
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="product-card"></div>
+    <script>
+      async function Datafetch() {
+        const url = "https://imdb-top-100-movies.p.rapidapi.com/";
+        const options = {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key":
+              "811b204f65msh7d08f3c1f4ccc46p1bdf9ajsnaa6f59d64424",
+            "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
+          },
+        };
+
+        try {
+          const response = await fetch(url, options);
+          const result = await response.json();
+          console.log(result);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      Datafetch();
+    </script>
+  </body>
+</html>

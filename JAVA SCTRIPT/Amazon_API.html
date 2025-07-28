@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function Datafetch() {
+        const url =
+          "https://real-time-amazon-data.p.rapidapi.com/influencer-profile?influencer_name=tastemade&country=US";
+        const options = {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key":
+              "811b204f65msh7d08f3c1f4ccc46p1bdf9ajsnaa6f59d64424",
+            "x-rapidapi-host": "real-time-amazon-data.p.rapidapi.com",
+          },
+        };
+
+        try {
+          const response = await fetch(url, options);
+          const result = await response.json();
+          console.log(result.data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      Datafetch();
+    </script>
+  </body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Influencer Profile</title>
+</head>
+<body>
+  <h1>Influencer Profile Data</h1>
+  <pre id="output">Loading...</pre>
+
+  <script>
+    const url = 'https://real-time-amazon-data.p.rapidapi.com/influencer-profile?influencer_name=tastemade&country=US';
+    const options = {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': '811b204f65msh7d08f3c1f4ccc46p1bdf9ajsnaa6f59d64424',
+        'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com'
+      }
+    };
+
+    async function fetchData() {
+      try {
+        const response = await fetch(url, options);
+        const result = await response.text();  // ya .json() agar response JSON ho
+        document.getElementById('output').textContent = result;
+      } catch (error) {
+        document.getElementById('output').textContent = 'Error fetching data: ' + error;
+      }
+    }
+
+    fetchData();
+  </script>
+</body>
+</html>
